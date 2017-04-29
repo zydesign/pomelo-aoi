@@ -1,16 +1,13 @@
 # pomelo-aoi
-pomelo-schedule is the aoi module used in the demo of pomelo.
 
-The aoi module include a set of aoi interface, and an implementation of tower aoi algorithm.  
-##Installation
+##安装aoi模块
 ```
 npm install pomelo-aoi
 ```
-##Generate an aoi instance
-For the aoi service can be used in many areas, each area use the aoi module should use it's own aoi instance.
-We use a aoi factory to generate aoi instance, it accept an object as parameter, and return an aoi instance,  which can be used to implament the aoi function.   
 
+##使用方式
 ``` javascript
+//先开启aoi服务，这个服务是aoi工厂函数的一个实例
 var aoiManager = require('pomelo-aoi');
 var config = {
 	map : {
@@ -29,6 +26,7 @@ var aoi = qoiManager.getService(config);
 ##Use the aoi service
 The aoi instace has the basic interface for aoi action.
 
+##开启aoi服务后，可以使用相关api
 ``` javascript
 	//Add object 
 	aoi.addObject(obj, pos);
@@ -48,6 +46,7 @@ The aoi instace has the basic interface for aoi action.
 	//updateWatcher(watcher, oldPos, newPos, oldRange, newRange);
 ``` 
 More api can be find in aoiService.js.
+所有api都在aoiservice.js脚本里面
 
 ##Handle aoi event
 The aoi service will generate event when the status of objects or watchers changes. You can handler these event :
