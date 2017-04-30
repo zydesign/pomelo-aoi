@@ -23,9 +23,6 @@ var config = {
 var aoi = qoiManager.getService(config);
 ```
 
-##Use the aoi service
-The aoi instace has the basic interface for aoi action.
-
 ##开启aoi服务后，可以使用相关api
 ``` javascript
 	//Add object 
@@ -45,16 +42,15 @@ The aoi instace has the basic interface for aoi action.
 	
 	//updateWatcher(watcher, oldPos, newPos, oldRange, newRange);
 ``` 
-More api can be find in aoiService.js.
+
 所有api都在aoiservice.js脚本里面
 
-##Handle aoi event
-The aoi service will generate event when the status of objects or watchers changes. You can handler these event :
+##aoi继承了事件分发器，先监听各个事件，当对象或观察者的状态发生变化时，触发aoi事件:
 ``` javascript
 	aoi.on('add', function(params){
 		//Handle add event
 	});
 
 ``` 
-The event of tower aoi are: 'add', 'remove', 'update' for aoi object, and 'updateWatcher' for watcher.
-Of course you can ignore all these events without do any effect to aoi function. 
+aoi灯塔事件通过'add', 'remove', 'update' 监听所有aoi灯塔对象,通过“updateWatcher”更新观察家。
+
