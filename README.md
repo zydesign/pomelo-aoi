@@ -43,7 +43,7 @@ var aoi = qoiManager.getService(config);
 	//updateWatcher(watcher, oldPos, newPos, oldRange, newRange);
 ``` 
 
-所有api都在aoiservice.js脚本里面
+所有api都在aoiservice.js脚本里面，aoiservice的方法都添加了事件发射器，只要注册了监听事件，调用函数即会触发事件
 
 ##aoi继承了事件分发器，先监听各个事件，当对象或观察者的状态发生变化时，触发aoi事件:
 ``` javascript
