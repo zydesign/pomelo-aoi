@@ -19,7 +19,7 @@ function testCase(){
   var w = config.width;
   var h = config.height;
 
-  var count = 10000;
+  var count = 10000; //创建一万个对象
 
   users = {};
   var id = 0;
@@ -35,6 +35,7 @@ function testCase(){
     };
   }
 
+  //给灯塔添加对象
   for(id in users){
     aoi.addObject(users[id], users[id].pos);
   }
@@ -58,7 +59,7 @@ function pathTest(w, h, aoi){
       y : Math.floor(Math.random()*h)
     };
 
-    //���������ƶ�
+    //Éú³ÉÐéÄâÒÆ¶¯
 
     var dis = Math.floor(Math.random()*max);
     direction = Math.random>0.5?-1:1;
